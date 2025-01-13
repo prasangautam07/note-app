@@ -80,7 +80,8 @@ CORS_ALLOWED_ORIGINS = [
 "http://localhost:5173",
 "http://localhost:5173",
 "https://note-iqtd7htze-prasan-gautams-projects.vercel.app",
-"https://note-app-beta-beryl.vercel.app"
+"https://note-app-beta-beryl.vercel.app",
+"https://note-app-2nq4.onrender.com"
 ]
 
 # Database
