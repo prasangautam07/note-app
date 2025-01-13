@@ -10,7 +10,7 @@ function NoteDetailPage({deleteNote}) {
   const[note,setNote]=useState({});
   const { slug } = useParams();
   useEffect(()=>{
-    axios.get(`https://note-app-api-vwz4.onrender.com//notes/${slug}`)
+    axios.get(`https://note-app-api-vwz4.onrender.com/notes/${slug}`)
     .then((res)=>{
       console.log(res.data);
       setNote(res.data)

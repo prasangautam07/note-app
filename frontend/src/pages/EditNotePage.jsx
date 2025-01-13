@@ -9,7 +9,7 @@ function EditNotePage({updateNote}) {
   const {slug}=useParams();
   const navigate=useNavigate();
   useEffect(()=>{
-    axios.get(`https://note-app-api-vwz4.onrender.com//notes/${slug}`)
+    axios.get(`https://note-app-api-vwz4.onrender.com/notes/${slug}`)
     .then((res)=>{
       setTitle(res.data.title)
       setBody(res.data.body)

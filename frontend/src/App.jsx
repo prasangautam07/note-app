@@ -26,7 +26,7 @@ function App() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://note-app-api-vwz4.onrender.com//notes")
+      .get("https://note-app-api-vwz4.onrender.com/notes")
       .then((res) => {
         console.log(res.data);
         setNotes(res.data);
@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     /*  if(searchText.length < 3) return; */
     axios
-      .get(`https://note-app-api-vwz4.onrender.com//notes-search/?search=${searchText}`)
+      .get(`https://note-app-api-vwz4.onrender.com/notes-search/?search=${searchText}`)
       .then((res) => {
         console.log(res.data);
         setNotes(res.data);
@@ -51,7 +51,7 @@ function App() {
 
   const addNote = (data) => {
     axios
-      .post("https://note-app-api-vwz4.onrender.com//notes/", data)
+      .post("https://note-app-api-vwz4.onrender.com/notes/", data)
       .then((res) => {
         console.log(res.data);
         setNotes([...notes, data]);
@@ -62,7 +62,7 @@ function App() {
   };
   const updateNote = (data, slug) => {
     axios
-      .put(`https://note-app-api-vwz4.onrender.com//notes/${slug}/`, data)
+      .put(`https://note-app-api-vwz4.onrender.com/notes/${slug}/`, data)
       .then((res) => {
         console.log(res.data);
         setNotes(notes.map((note) => (note.slug === slug ? res.data : note)));
@@ -74,7 +74,7 @@ function App() {
   };
   const deleteNote = (slug) => {
     axios
-      .delete(`https://note-app-api-vwz4.onrender.com//notes/${slug}`)
+      .delete(`https://note-app-api-vwz4.onrender.com/notes/${slug}`)
       .then((res) => {
         console.log(res.data);
         setNotes(notes.filter((note) => note.slug !== slug));
