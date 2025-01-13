@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+.edit-note-container{
+    position: relative;
+}
+.mb-3{
+    margin-bottom: 1.5rem;
+}
+.edit-note{
+    position: absolute;
+    top: 110px; 
+    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+form{
+    border-radius: 5px;
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+}
+form input{
+    margin-top: 5px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form select{
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+}
+form textarea{
+    margin-top: 5px;
+    height: 80px;
+    padding: 10px 0px 10px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.title-block, .content-block,.category-block{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-size: 20px;
+}
+select{
+    font-size: 15px;
+    padding: 10px;
+}
+button{
+    background-color: #4CAF50;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 550;
+    cursor: pointer;
+}
+button:hover{
+    opacity: 0.9;
+}

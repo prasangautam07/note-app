@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(241, 245, 248);
+  position: relative;
+}
+
+.no-notes-header{
+  position: absolute;
+  top: 100px;
+}

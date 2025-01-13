@@ -1,0 +1,22 @@
+.filter-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filter{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 90px;
+    padding: 9px;
+    border-radius: 4px;
+    font-weight: 550;
+    width: 30vw;
+    outline: none;
+}
+
+.filter:focus{
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
