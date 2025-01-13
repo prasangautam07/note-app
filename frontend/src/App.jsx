@@ -28,7 +28,7 @@ function App() {
     axios
       .get("https://note-app-api-vwz4.onrender.com/notes")
       .then((res) => {
-        console.log(res.data);
+        console.log("result",res.data);
         setNotes(res.data);
       })
       .catch((err) => {
