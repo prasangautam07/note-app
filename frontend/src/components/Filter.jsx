@@ -1,4 +1,4 @@
-import "./filter.css"
+import "./Filter.css"
 
 const Filter = ({handleFilterText}) => {
   return (
