@@ -26,7 +26,7 @@ function App() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://note-app-api-vwz4.onrender.com/notes")
+      .get("https://note-app-api-vwz4.onrender.com/notes/")
       .then((res) => {
         console.log("result",res.data);
         setNotes(res.data);
@@ -35,13 +35,14 @@ function App() {
         console.log(err);
       });
   }, []);
+
   const searchNotes = (searchQuery) => {
     setSearchText(searchQuery);
   };
   useEffect(() => {
     /*  if(searchText.length < 3) return; */
     axios
-      .get(`https://note-app-api-vwz4.onrender.com/notes-search/?search=${searchText}`)
+      .get(`https://note-app-api-vwz4.onrender.com/notes-search/?search=${searchText}/`)
       .then((res) => {
         console.log(res.data);
         setNotes(res.data);
@@ -74,7 +75,7 @@ function App() {
   };
   const deleteNote = (slug) => {
     axios
-      .delete(`https://note-app-api-vwz4.onrender.com/notes/${slug}`)
+      .delete(`https://note-app-api-vwz4.onrender.com/notes/${slug}/`)
       .then((res) => {
         console.log(res.data);
         setNotes(notes.filter((note) => note.slug !== slug));
