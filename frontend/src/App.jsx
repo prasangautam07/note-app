@@ -26,10 +26,10 @@ function App() {
 
   const navigate = useNavigate();
   useEffect(() => {
+    setLoading(true);
     axios
     .get("https://note-app-api-vwz4.onrender.com/notes/")
     .then((res) => {
-        setLoading(true);
         console.log("result",res.data);
         setNotes(res.data);
       })
@@ -39,14 +39,14 @@ function App() {
       .finally(()=>{
         setLoading(false)
       })
-  }, []);
-
+  },[]);
   const searchNotes = (searchQuery) => {
     setSearchText(searchQuery);
+    console.log(searchText)
   };
   useEffect(() => {
     axios
-      .get(`https://note-app-api-vwz4.onrender.com/notes-search/?search=${searchText}/`)
+      .get(`https://note-app-api-vwz4.onrender.com/notes-search/?search=${searchText}`)
       .then((res) => {
         console.log(res.data);
         setNotes(res.data);
