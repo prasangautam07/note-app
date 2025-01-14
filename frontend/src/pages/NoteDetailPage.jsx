@@ -4,7 +4,6 @@ import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { FormatDate } from "../components/FormatDate";
-import { ToastContainer,toast } from "react-toastify";
 import "./NoteDetail.css";
 function NoteDetailPage({deleteNote}) {
   const[note,setNote]=useState({});

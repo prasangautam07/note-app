@@ -11,6 +11,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState();
   const [filterText, setFilterText] = useState();
+  const [loading,setLoading]=useState(false);
   const handleFilterText = (val) => {
     setFilterText(val);
   };
@@ -26,21 +27,24 @@ function App() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://note-app-api-vwz4.onrender.com/notes/")
-      .then((res) => {
+    .get("https://note-app-api-vwz4.onrender.com/notes/")
+    .then((res) => {
+        setLoading(true);
         console.log("result",res.data);
         setNotes(res.data);
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(()=>{
+        setLoading(false)
+      })
   }, []);
 
   const searchNotes = (searchQuery) => {
     setSearchText(searchQuery);
   };
   useEffect(() => {
-    /*  if(searchText.length < 3) return; */
     axios
       .get(`https://note-app-api-vwz4.onrender.com/notes-search/?search=${searchText}/`)
       .then((res) => {
@@ -94,6 +98,7 @@ function App() {
             index
             element={
               <HomePage
+                loading={loading}
                 notes={filteredNotes}
                 handleFilterText={handleFilterText}
               />

@@ -1,17 +1,12 @@
-import { h1 } from "motion/react-client"
 import Filter from "../components/Filter"
 import NoteCardContainer from "../components/NoteCardContainer"
 import PropTypes from 'prop-types'
-function HomePage({notes,handleFilterText}) {
+function HomePage({loading,notes,handleFilterText}) {
   return (
-    <>
-      {notes.length<1 ? <h1 className="no-notes-header">No Notes Found</h1>:
       <div>
         <Filter handleFilterText={handleFilterText} />
-        <NoteCardContainer notes={notes} />
+        <NoteCardContainer loading={loading} notes={notes} />
       </div>
-      }
-    </>
   )
 }
 HomePage.prototype={

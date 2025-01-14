@@ -1,9 +1,13 @@
 import NoteCard from "./NoteCard"
 import './NoteCard.css'
-function NoteCardContainer({notes}) {
+function NoteCardContainer({loading,notes}) {
   return (
-    <div className='notecard-container'>
-        { notes.map(note => <NoteCard key={note.title} note={note} />)}
+    <div>
+      { (loading) ? (<div className="no-notes-header">loading</div>) :
+        (<div className='notecard-container'>
+            { notes.map(note => <NoteCard key={note.title} note={note} />)}
+        </div>)
+      }
     </div>
   )
 }
